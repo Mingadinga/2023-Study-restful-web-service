@@ -37,7 +37,7 @@ public class UserDaoService { // dao에 가시적인 역할이 없어 통합
         return user;
     }
 
-    public User delete(int id) throws UserNotFoundException {
+    public User delete(Integer id) throws UserNotFoundException {
         Optional<User> user = users.stream()
                 .filter(u -> u.getId() == id)
                 .findFirst();
@@ -46,4 +46,14 @@ public class UserDaoService { // dao에 가시적인 역할이 없어 통합
     }
 
 
+    public User update(Integer id, User updatedUser) throws UserNotFoundException {
+        Optional<User> user = users.stream()
+                .filter(u -> u.getId() == id)
+                .findFirst();
+        user.ifPresent(u -> {
+            users.remove(u);
+            users.add(updatedUser);
+        });
+        return user.orElseThrow(() -> new UserNotFoundException(String.format("ID[$%s] not found", id)));
+    }
 }

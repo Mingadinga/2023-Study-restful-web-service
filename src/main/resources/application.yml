@@ -4,3 +4,9 @@ server:
 logging:
   level:
     org.springframework: DEBUG
+
+# 사용할 다국어 메시지 파일명이 messages
+spring:
+  messages:
+    basename: messages
+    fallback-to-system-locale: false

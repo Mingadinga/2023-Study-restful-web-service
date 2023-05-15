@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.net.URI;
 import java.util.List;
@@ -26,7 +27,7 @@ public class UserController {
     }
 
     @PostMapping("/users")
-    public ResponseEntity createUser(@RequestBody User user) { // 역직렬화
+    public ResponseEntity createUser(@Valid @RequestBody User user) { // 역직렬화
         User savedUser = service.save(user);
 
         // 새로 추가한 user의 location
@@ -43,6 +44,11 @@ public class UserController {
     @DeleteMapping("/users/{id}")
     public User deleteById(@PathVariable Integer id) throws UserNotFoundException {
         return service.delete(id);
+    }
+
+    @PutMapping("/users/{id]}")
+    public User updateById(@PathVariable Integer id, @RequestBody User user) throws UserNotFoundException {
+        return service.update(id, user);
     }
 
 }
