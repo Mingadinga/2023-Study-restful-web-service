@@ -13,4 +13,5 @@
 |------------|---------------------------------------------|
 | 2023-05-13 | Section1. Spring Boot로 개발하는 RESTful Service |
 | 2023-05-14 | Section2. User Service API 구현               |
-| 2023-05-14 | Section3. RESTful Service 기능 확장 - 국제화       |
+| 2023-05-15 | Section3. RESTful Service 기능 확장 - 국제화       |
+| 2023-05-16 | Section4. Spring Boot API 사용                |

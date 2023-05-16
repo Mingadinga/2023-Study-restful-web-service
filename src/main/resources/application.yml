@@ -6,7 +6,18 @@ logging:
     org.springframework: DEBUG
 
 # 사용할 다국어 메시지 파일명이 messages
+# 시스템 로케일 사용 안함. 메시지 파일 없으면 디폴트 메시지 반환
 spring:
   messages:
     basename: messages
     fallback-to-system-locale: false
+  security:
+    user:
+      name: username
+      password: password
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

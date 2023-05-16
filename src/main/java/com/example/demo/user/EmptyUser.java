@@ -4,6 +4,6 @@ import java.util.Date;
 
 public class EmptyUser extends User {
     public EmptyUser() {
-        super(0, "none", new Date());
+        super(0, "none", new Date(), "none", "none");
     }
 }

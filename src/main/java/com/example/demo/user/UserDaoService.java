@@ -12,9 +12,9 @@ public class UserDaoService { // dao에 가시적인 역할이 없어 통합
     private static List<User> users = new ArrayList<>(); // db 대신 상태를 저장
 
     static {
-        users.add(new User(1, "Kenneth", new Date()));
-        users.add(new User(2, "Alice", new Date()));
-        users.add(new User(3, "Elena", new Date()));
+        users.add(new User(1, "Kenneth", new Date(), "pass1", "701010-111111"));
+        users.add(new User(2, "Alice", new Date(), "pass2", "701010-111112"));
+        users.add(new User(3, "Elena", new Date(), "pass3", "701010-111113"));
     }
 
     public List<User> findAll() {
