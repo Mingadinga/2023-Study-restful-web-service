@@ -15,3 +15,5 @@
 | 2023-05-14 | Section2. User Service API 구현               |
 | 2023-05-15 | Section3. RESTful Service 기능 확장 - 국제화       |
 | 2023-05-16 | Section4. Spring Boot API 사용                |
+| 2023-05-17 | Section5. Java Persistence API 사용                |
+

@@ -1,5 +1,6 @@
 package com.example.demo.exception;
 
+import com.example.demo.post.PostNotFoundException;
 import com.example.demo.user.UserNotFoundException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -17,8 +18,8 @@ import java.util.Date;
 @ControllerAdvice
 public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
 
-    @ExceptionHandler(UserNotFoundException.class)
-    public final ResponseEntity<Object> handleUserNotFoundException(Exception ex, WebRequest request) {
+    @ExceptionHandler({UserNotFoundException.class, PostNotFoundException.class})
+    public final ResponseEntity<Object> handleEntityNotFoundException(Exception ex, WebRequest request) {
         ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(), ex.getMessage(), request.getDescription(false));
         return new ResponseEntity<>(exceptionResponse, HttpStatus.NOT_FOUND);
     }
